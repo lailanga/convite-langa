@@ -1,0 +1,65 @@
+:root{
+  --pine:#1c3a2a;
+  --pine-2:#264c37;
+  --wheat:#f0b93a;
+  --straw:#f6e7b4;
+  --paper:#fbf6e6;
+  --ink:#1a1a14;
+  --display:var(--font-display),"Rockwell","Georgia",serif;
+  --body:var(--font-body),"Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--pine);color:var(--paper);line-height:1.6;font-size:18px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wheat);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+.hero{padding:72px 0 56px;border-bottom:6px solid var(--wheat)}
+.hero .kicker{font-weight:800;color:var(--wheat);font-size:1.05rem;margin-bottom:12px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3.2rem,14vw,8rem);line-height:.95;color:var(--paper)}
+.typos{display:flex;flex-wrap:wrap;gap:6px 18px;margin:18px 0 6px;font-family:var(--display);font-size:clamp(1.3rem,5vw,2rem);color:var(--pine-2);-webkit-text-stroke:1px rgba(246,231,180,.45)}
+.typos span{position:relative;opacity:0;animation:appear .5s forwards}
+.typos span::after{content:"";position:absolute;left:-3px;right:-3px;top:54%;height:3px;background:var(--wheat);transform:scaleX(0);transform-origin:left;animation:strike .4s forwards}
+.typos span:nth-child(1){animation-delay:.3s}.typos span:nth-child(1)::after{animation-delay:.9s}
+.typos span:nth-child(2){animation-delay:.6s}.typos span:nth-child(2)::after{animation-delay:1.2s}
+.typos span:nth-child(3){animation-delay:.9s}.typos span:nth-child(3)::after{animation-delay:1.5s}
+.typos span:nth-child(4){animation-delay:1.2s}.typos span:nth-child(4)::after{animation-delay:1.8s}
+@keyframes appear{to{opacity:1}}
+@keyframes strike{to{transform:scaleX(1)}}
+.tagline{max-width:34ch;font-size:1.25rem;margin-top:14px;color:var(--straw)}
+
+.when{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.chip{background:var(--wheat);color:var(--ink);padding:14px 20px;border-radius:14px;font-weight:800}
+.chip small{display:block;font-weight:600;font-size:.8rem;opacity:.8}
+.chip b{font-size:1.25rem}
+
+section{padding:56px 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,6vw,2.6rem);color:var(--wheat);margin-bottom:24px;line-height:1.1}
+
+.agenda{list-style:none;border-left:4px solid var(--wheat);margin-left:6px}
+.agenda li{padding:0 0 28px 24px;position:relative}
+.agenda li::before{content:"";position:absolute;left:-12px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--pine);border:4px solid var(--wheat)}
+.agenda .hora{font-weight:800;color:var(--wheat);font-size:1.1rem}
+.agenda h3{font-size:1.4rem;font-weight:800;line-height:1.2}
+.agenda p{color:var(--straw);max-width:50ch}
+
+.humor{background:var(--paper);color:var(--ink);border-radius:20px;padding:32px 28px}
+.humor h2{color:var(--pine)}
+.humor p{max-width:56ch;margin-bottom:12px}
+.humor .ps{font-weight:800;color:var(--pine);margin-bottom:0}
+
+.local p{max-width:50ch;margin-bottom:18px}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--wheat);color:var(--ink)}
+.btn-line{border:2px solid var(--wheat);color:var(--wheat)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+footer{padding:32px 0 48px;color:var(--straw);font-size:.95rem;border-top:1px solid rgba(246,231,180,.25)}
+
+@media (prefers-reduced-motion:reduce){
+  .typos span{opacity:1;animation:none}
+  .typos span::after{transform:scaleX(1);animation:none}
+  html{scroll-behavior:auto}.btn{transition:none}
+}
