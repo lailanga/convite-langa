@@ -73,3 +73,8 @@ footer{padding:32px 0 48px;color:var(--straw);font-size:.95rem;border-top:1px so
   .typos span::after{transform:scaleX(1);animation:none}
   html{scroll-behavior:auto}.btn,.contato{transition:none}
 }
+.pix{background:var(--pine-2);border:3px solid var(--wheat);border-radius:20px;padding:28px}
+.pix p{margin-bottom:10px}
+.pix .chave b{font-size:1.3rem;color:var(--wheat);word-break:break-all}
+.pix .btn{border:0;cursor:pointer;font-family:inherit;font-size:1rem;margin:8px 0 14px}
+.pix .obs{color:var(--straw);font-size:.95rem;margin:0}
