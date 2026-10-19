@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: "Encontro da Família Langa",
     description:
-      "Missa às 9h, almoço tradicional e matinê. Venha, mesmo que seu sobrenome seja Longa, Langue ou Lange.",
+      "Missa às 10h, almoço tradicional e matinê. Venha, mesmo que seu sobrenome seja Longa, Langue ou Lange.",
     type: "website",
     locale: "pt_BR",
   },
