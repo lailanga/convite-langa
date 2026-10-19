@@ -114,6 +114,29 @@ export default function Home() {
   </div>
 </section>
 
+<section>
+  <div className="wrap">
+    <h2>Baixe e compartilhe o convite</h2>
+    <p className="intro">Mande pra família toda:</p>
+    <div className="btns">
+      <a
+        className="btn btn-main"
+        href="/convite-encontro-familia-langa.png"
+        download="convite-encontro-familia-langa.png"
+      >
+        Baixar imagem (PNG)
+      </a>
+      <a
+        className="btn btn-line"
+        href="/convite-encontro-familia-langa.pdf"
+        download="convite-encontro-familia-langa.pdf"
+      >
+        Baixar PDF
+      </a>
+    </div>
+  </div>
+</section>
+
         <section id="contato">
           <div className="wrap">
             <h2>Informações e confirmação</h2>
