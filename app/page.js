@@ -1,10 +1,8 @@
 import { CONFIG } from "../lib/config";
 
-const MAPA =
-  "https://www.google.com/maps/search/?api=1&query=Paineira+do+Igua%C3%A7u+Cruzeiro+do+Igua%C3%A7u+PR";
-
 export default function Home() {
-  const zap = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensagem)}`;
+  const zapLink = (numero) =>
+    `https://wa.me/${numero}?text=${encodeURIComponent(CONFIG.mensagem)}`;
 
   return (
     <>
@@ -22,8 +20,10 @@ export default function Home() {
 
           <div className="when">
             <div className="chip"><small>Domingo</small><b>{CONFIG.data}</b></div>
-            <div className="chip"><small>Começa às</small><b>9h, com missa</b></div>
+            <div className="chip"><small>Começa às</small><b>{CONFIG.horaMissa}, com missa</b></div>
             <div className="chip"><small>Onde</small><b>Paineira do Iguaçu</b></div>
+            <div className="chip"><small>Almoço</small><b>{CONFIG.valorAlmoco}</b></div>
+            <div className="chip"><small>Hospedagem</small><b>Não inclusa</b></div>
           </div>
         </div>
       </header>
@@ -34,14 +34,14 @@ export default function Home() {
             <h2>Como vai ser o dia</h2>
             <ol className="agenda">
               <li>
-                <div className="hora">9h</div>
+                <div className="hora">{CONFIG.horaMissa}</div>
                 <h3>Missa</h3>
                 <p>Pra agradecer a família, os que estão aqui e os que a gente lembra com saudade.</p>
               </li>
               <li>
                 <div className="hora">Depois da missa</div>
                 <h3>Almoço tradicional</h3>
-                <p>Mesa farta, prato cheio e muita conversa. Dá pra repetir.</p>
+                <p>Mesa farta, prato cheio e muita conversa. Valor: {CONFIG.valorAlmoco}.</p>
               </li>
               <li>
                 <div className="hora">À tarde</div>
@@ -74,13 +74,48 @@ export default function Home() {
           <div className="wrap">
             <h2>Onde fica</h2>
             <p>Comunidade de Paineira do Iguaçu, município de Cruzeiro do Iguaçu, Paraná.</p>
-            <div className="btns">
-              <a className="btn btn-main" href={zap} target="_blank" rel="noopener noreferrer">
-                Confirmar presença no WhatsApp
-              </a>
-              <a className="btn btn-line" href={MAPA} target="_blank" rel="noopener noreferrer">
-                Ver no mapa
-              </a>
+            <div className="mapa">
+              <iframe
+                title="Mapa de Cruzeiro do Iguaçu - PR"
+                src={CONFIG.mapaSrc}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="wrap">
+            <div className="aviso">
+              <h2>Sobre a hospedagem</h2>
+              <p>
+                O encontro é promovido e organizado pela família Langa. A organização
+                cuida da missa, do almoço e da matinê, mas não oferece hospedagem.
+                Quem vier de longe precisa reservar o seu lugar por conta própria.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contato">
+          <div className="wrap">
+            <h2>Informações e confirmação</h2>
+            <p className="intro">Chame no WhatsApp:</p>
+            <div className="contatos">
+              {CONFIG.contatos.map((c) => (
+                <a
+                  key={c.whatsapp}
+                  className="contato"
+                  href={zapLink(c.whatsapp)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="nome">{c.nome}</span>
+                  <span className="num">{c.exibir}</span>
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -88,13 +123,7 @@ export default function Home() {
 
       <footer>
         <div className="wrap">
-          <p>
-            Informações:{" "}
-            <a href={zap} target="_blank" rel="noopener noreferrer">
-              {CONFIG.whatsappExibir}
-            </a>
-            . Chame a família toda e avise quantos vão pra gente separar a comida.
-          </p>
+          <p>Chame a família toda e avise quantos vão pra gente separar a comida.</p>
         </div>
       </footer>
     </>

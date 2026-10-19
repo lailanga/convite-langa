@@ -50,6 +50,16 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,6vw,2.6rem)
 .humor .ps{font-weight:800;color:var(--pine);margin-bottom:0}
 
 .local p{max-width:50ch;margin-bottom:18px}
+.mapa iframe{display:block;width:100%;height:380px;border:0;border-radius:16px;background:var(--pine-2)}
+.aviso{border:3px dashed var(--wheat);border-radius:20px;padding:28px}
+.aviso h2{font-size:clamp(1.5rem,5vw,2rem);margin-bottom:12px}
+.aviso p{max-width:56ch;color:var(--straw)}
+.intro{margin-bottom:16px;color:var(--straw)}
+.contatos{display:flex;flex-wrap:wrap;gap:14px}
+.contato{display:flex;flex-direction:column;background:var(--wheat);color:var(--ink);text-decoration:none;padding:18px 24px;border-radius:16px;min-width:240px;transition:transform .15s}
+.contato:hover{transform:translateY(-2px)}
+.contato .nome{font-weight:800;font-size:1.2rem}
+.contato .num{font-weight:600}
 .btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn-main{background:var(--wheat);color:var(--ink)}
@@ -61,5 +71,5 @@ footer{padding:32px 0 48px;color:var(--straw);font-size:.95rem;border-top:1px so
 @media (prefers-reduced-motion:reduce){
   .typos span{opacity:1;animation:none}
   .typos span::after{transform:scaleX(1);animation:none}
-  html{scroll-behavior:auto}.btn{transition:none}
+  html{scroll-behavior:auto}.btn,.contato{transition:none}
 }
