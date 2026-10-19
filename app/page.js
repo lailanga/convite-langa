@@ -104,11 +104,12 @@ export default function Home() {
   <div className="wrap">
     <h2>Pagamento por Pix</h2>
     <div className="pix">
-      <p>Valor: {CONFIG.valorAlmoco}, com almoço, bebidas e matinê.</p>
+      <p>Valor: {CONFIG.valorAlmoco}, com almoço, bebidas* e matinê.</p>
       <p className="chave">Chave Pix (CPF): <b>{CONFIG.pix.chave}</b></p>
       <p>Titular: {CONFIG.pix.titular}</p>
       <CopiarPix chave={CONFIG.pix.chave} />
       <p className="obs">Depois de pagar, mande o comprovante no WhatsApp de um dos contatos abaixo.</p>
+      <p className="obs">bebidas esta incluso somente água e refrigerante</p>
     </div>
   </div>
 </section>
