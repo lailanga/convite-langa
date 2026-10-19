@@ -18,7 +18,7 @@ const body = Nunito({
 export const metadata = {
   title: "Encontro da Família Langa",
   description:
-    "Domingo, dia 07: missa às 9h, almoço tradicional e matinê em Paineira do Iguaçu, Cruzeiro do Iguaçu - PR.",
+    "Domingo, dia 07 de Fevereiro de 2027: missa às 10h, almoço tradicional e matinê em Paineira do Iguaçu, Cruzeiro do Iguaçu - PR.",
   openGraph: {
     title: "Encontro da Família Langa",
     description:
