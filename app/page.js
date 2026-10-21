@@ -25,6 +25,8 @@ export default function Home() {
             <div className="chip"><small>Onde</small><b>Paineira do Iguaçu</b></div>
             <div className="chip"><small>Almoço e matinê</small><b>{CONFIG.valorAlmoco}</b></div>
             <div className="chip"><small>Hospedagem</small><b>Não inclusa</b></div>
+            <div className="chip"><small>Crianças até 12 anos</small><b>Não pagam</b></div>
+            <div className="chip"><small>Reservas até </small><b>{CONFIG.prazoReserva}</b></div>
           </div>
         </div>
       </header>
@@ -42,7 +44,7 @@ export default function Home() {
               <li>
                 <div className="hora">Depois da missa</div>
                 <h3>Almoço tradicional</h3>
-                <p>Mesa farta, prato cheio e muita conversa. Valor: {CONFIG.valorAlmoco}, com água e refrigerante incluídos.</p>
+                <p>Mesa farta, prato cheio e muita conversa. Valor: {CONFIG.valorAlmoco}, com água e refrigerante incluídos. Crianças até 12 anos não pagam.</p>
               </li>
               <li>
                 <div className="hora">À tarde</div>
@@ -102,8 +104,10 @@ export default function Home() {
 
         <section>
   <div className="wrap">
-    <h2>Pagamento por Pix</h2>
+    <h2>Reserva e pagamento por Pix</h2>
     <div className="pix">
+      <p>Reservas aceitas <b>mediante pagamento até {CONFIG.prazoReserva}</b>.
+  Crianças até 12 anos não pagam.</p>
       <p>Valor: {CONFIG.valorAlmoco}, com almoço, bebidas* e matinê.</p>
       <p className="chave">Chave Pix (CPF): <b>{CONFIG.pix.chave}</b></p>
       <p>Titular: {CONFIG.pix.titular}</p>
